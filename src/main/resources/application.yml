@@ -1,0 +1,22 @@
+mongock:
+  migration-scan-package: com.springboot.mongodb.config
+
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      database: escola
+      host: localhost
+      password: root
+      port: 27017
+      username: root
+  messages:
+    basename: messages
+    fallback-to-system-locale: false
+    encoding: UTF-8
+  output:
+    ansi:
+      enabled: ALWAYS

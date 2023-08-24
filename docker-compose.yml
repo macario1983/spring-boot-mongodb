@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  database:
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    image: mongo:jammy
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - mongodb-network
+
+networks:
+  mongodb-network:
+    driver: bridge
+    name: mongodb-network
+
+volumes:
+  mongodb-data:
+    name: mongodb-data
